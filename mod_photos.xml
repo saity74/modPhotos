@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>mod_photos</name>
+	<author>Danila Buyanov</author>
+	<creationDate>July 2006</creationDate>
+	<copyright>Copyright (C) 2013 Saity74 LLC. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@saity74.ru</authorEmail>
+	<authorUrl>www.saity74.ru</authorUrl>
+	<version>2.5.0</version>
+	<description>DESPHOTOS</description>
+	<files>
+		<filename module="mod_photos">mod_photos.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>		
+		<filename>mod_photos.xml</filename>
+		<filename>thumbnail.php</filename>
+	</files>
+	<languages folder="languages">
+		<language tag="en-GB">en-GB.mod_photos.ini</language>
+		<language tag="en-GB">en-GB.mod_photos.sys.ini</language>
+		<language tag="ru-RU">ru-RU.mod_photos.ini</language>
+		<language tag="ru-RU">ru-RU.mod_photos.sys.ini</language>
+	</languages>
+	<config>
+	
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="path" type="text" default="" label="MOD_PHOTOS_PATH_LABEL" description="Folder with photos" />
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="gallery_type"
+					type="list"
+					default="0"
+					label="MOD_PHOTOS_GALLERY_TYPE_LABEL"
+					description="MOD_PHOTOS_GALLERY_TYPE_DESC">
+					<option
+						value="1">MOD_PHOTOS_GALLERY_TYPE_GROUP</option>
+					<option
+						value="0">MOD_PHOTOS_GALLERY_TYPE_UNGROUP</option>
+				</field>
+				<field name="main_photo" type="text" default="1" label="MOD_PHOTOS_MAIN_PHOTO_LABEL" description="MOD_PHOTOS_MAIN_PHOTO_DESC" />
+				<field name="header" type="text" default="" label="MOD_PHOTOS_HEADER_LABEL" description="MOD_PHOTOS_HEADER_DESC" />
+				<field name="width" type="text" default="160" label="MOD_PHOTOS_THUMB_WIDTH_LABEL" description="Width of min-image" />
+				<field name="height" type="text" default="100" label="MOD_PHOTOS_THUMB_HEIGHT_LABEL" description="Height of min-image" />
+			</fieldset>
+			<fieldset
+				name="titles">
+				<field
+					name="title_1"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_01_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_01_DESC" />
+				<field
+					name="title_2"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_02_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_02_DESC" />
+				<field
+					name="title_3"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_03_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_03_DESC" />
+				<field
+					name="title_4"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_04_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_04_DESC" />
+				<field
+					name="title_5"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_05_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_05_DESC" />
+				<field
+					name="title_6"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_06_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_06_DESC" />
+				<field
+					name="title_7"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_07_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_07_DESC" />
+				<field
+					name="title_8"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_08_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_08_DESC" />
+				<field
+					name="title_9"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_09_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_09_DESC" />
+				<field
+					name="title_10"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_10_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_10_DESC" />
+				<field
+					name="title_11"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_11_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_11_DESC" />
+				<field
+					name="title_12"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_12_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_12_DESC" />
+				<field
+					name="title_13"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_13_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_13_DESC" />
+				<field
+					name="title_14"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_14_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_14_DESC" />
+				<field
+					name="title_15"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_15_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_15_DESC" />
+				<field
+					name="title_16"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_16_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_16_DESC" />
+				<field
+					name="title_17"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_17_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_17_DESC" />
+				<field
+					name="title_18"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_18_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_18_DESC" />
+				<field
+					name="title_19"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_19_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_19_DESC" />
+				<field
+					name="title_20"
+					type="text"
+					label="MOD_PHOTOS_IMAGE_TITLE_20_LABEL"
+					description="MOD_PHOTOS_IMAGE_TITLE_20_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+			
+		</fields>
+	</config>
+</extension>
