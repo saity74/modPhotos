@@ -72,7 +72,7 @@ class Thumbnail
      * @static
      * @see    Thumbnail::imageCreateFromFile(), Thumbnail::imageCreateFromString()
      */
-    function imageCreate($input)
+    static public function imageCreate($input)
     {
         if ( is_file($input) ) {
             return Thumbnail::imageCreateFromFile($input);
@@ -95,7 +95,7 @@ class Thumbnail
      * @access public
      * @static
      */
-    function imageCreateFromFile($filename)
+    static public function imageCreateFromFile($filename)
     {
         if ( ! is_file($filename) || ! is_readable($filename) ) {
             user_error('Unable to open file "' . $filename . '"', E_USER_NOTICE);
@@ -129,7 +129,7 @@ class Thumbnail
      * @access public
      * @static
      */
-    function imageCreateFromString($string)
+    static public function imageCreateFromString($string)
     {
         if ( ! is_string($string) || empty($string) ) {
             user_error('Invalid image value in string', E_USER_NOTICE);
@@ -224,7 +224,7 @@ class Thumbnail
      * @access public
      * @see    Thumbnail::output()
      */
-    function render($input, $options=array())
+    static public function render($input, $options = array())
     {
         // Create the source image
         $sourceImage = Thumbnail::imageCreate($input);
@@ -333,7 +333,7 @@ class Thumbnail
     // }}}
     // {{{ _coord()
 
-    function _coord($align, $param, $src)
+    static protected function _coord($align, $param, $src)
     {
         if ( $align < THUMBNAIL_ALIGN_CENTER ) {
             $result = 0;

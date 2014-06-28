@@ -9,13 +9,15 @@ class modPhotosHelper
 	static $width;
 	static $height;
 	
-	private function _setPath($folder)
+	static private function _setPath($folder)
 	{
 		self::$_path = JPATH_SITE.DS.'images'.DS.$folder;
 	}
 	
-	public function getPhotos($path, $width, $height)
+	static public function getPhotos($path = '', $width = 160, $height = 100)
 	{
+		$mid_images = array();
+		
 		if ($path)
 			self::_setPath($path);
 		
@@ -45,7 +47,7 @@ class modPhotosHelper
 		return $mid_images;
 	}
 	
-	public function createThumb($image)
+	static public function createThumb($image)
 	{
 		
 		if (!file_exists(self::$_path.DS.'min'))
@@ -56,7 +58,7 @@ class modPhotosHelper
 		$midOptions = array(
 				'width' => 800,
 				'height' => 600,
-				'method' => THUMBNAIL_METHOD_HEIGHT_PRIORITY,
+				'method' => THUMBNAIL_METHOD_SCALE_MIN,
 			);
 			
 		
