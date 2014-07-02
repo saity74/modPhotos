@@ -1,7 +1,10 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
-	
-//$big_img = str_replace(JPATH_SITE, '', $photos[0]).'?'.rand(0,100000);
+
+$doc = JFactory::getDocument();
+$doc->addScript('/modules/mod_photos/assets/js/slimbox2.js');
+$doc->addStyleSheet('/modules/mod_photos/assets/css/slimbox.css');
+$doc->addStyleSheet('/modules/mod_photos/assets/css/mod_photos.css');
 
 $sort = $params->get('sort', 0);
 

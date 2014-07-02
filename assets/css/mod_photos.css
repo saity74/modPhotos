@@ -1,0 +1,15 @@
+.photos{
+    overflow: hidden;
+    margin-bottom: 2em;
+}
+
+.photos ul > li{
+    margin: 10px 6px 0 0;
+    float: left;
+}
+
+.photos img{
+    padding: 3px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
