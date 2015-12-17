@@ -26,22 +26,24 @@ if ($params->get('gallery_type', 0) == 1 && isset($photos[$main_photo_index]))
 
     <?php if (!$params->get('gallery_type', 0)) : ?>
         <ul class="list-previews unstyled">
-            <?php foreach ($photos as $key => $photo) : ?>
-                <?php
+            <?php foreach ($photos as $key => $photo) :
                 $image_name = basename($photo);
                 $min_img = str_replace('-mid.jpg', '-min.jpg', $image_name);
                 $base = $doc->getBase();
-                ?>
-                <li><a rel="lightbox-gallery" title="<?php echo $params->get('title_'.($key+1)) ?>" href="<?php echo $base; ?>images/<?=$params->get('path')?>/<?php echo $image_name?>" class="thumb"><img src="<?php echo $base; ?>images/<?=$params->get('path')?>/min/<?=$min_img?>" /></a></li>
+            ?>
+                <li><a rel="lightbox-gallery" 
+                title="<?php echo $params->get('title_'.($key+1)) ?>"
+                href="<?php echo $base; ?>images/<?=$params->get('path')?>/<?php echo $image_name?>" 
+                class="thumb"><img src="<?php echo $base; ?>images/<?=$params->get('path')?>/min/<?=$min_img?>" /></a></li>
             <?php endforeach; ?>
         </ul>
     <?php else : ?>
         <div class="main-photo">
             <a rel="lightbox-gallery" title="<?php echo $params->get('title_'.($main_photo_index+1)) ?>" href="<?php echo $base; ?>images/<?=$params->get('path')?>/<?=$main_photo?>" class="thumb"><img src="<?php echo $base; ?>images/<?=$params->get('path')?>/min/<?=$main_photo_img?>" /></a>
             <div class="photos-invisible">
-                <? foreach ($photos as $key => $photo) : $image_name = basename($photo); ?>
+                <?php foreach ($photos as $key => $photo) : $image_name = basename($photo); ?>
                     <a rel="lightbox-gallery" title="<?php echo $params->get('title_'.($key+1)) ?>" href="<?php echo $base; ?>images/<?=$params->get('path')?>/<?=$image_name?>"></a>
-                <? endforeach; ?>
+                <?php endforeach; ?>
             </div>
             <?php if ($header = $params->get('header', '')) : ?>
                 <span class="main-photo-title"><?php echo $header ?></span>
